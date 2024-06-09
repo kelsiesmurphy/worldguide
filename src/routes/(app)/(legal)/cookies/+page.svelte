@@ -1,0 +1,1 @@
+<p>Cookies coming soon</p>
