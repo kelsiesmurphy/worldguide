@@ -12,18 +12,13 @@
 	const sections = [
 		{
 			name: "Events",
-			slug: `groups/${$page.params.slug}`,
-			route_id: "/(app)/groups/[slug]"
-		},
-		{
-			name: "Members",
-			slug: `groups/${$page.params.slug}/members`,
-			route_id: "/(app)/groups/[slug]/members"
+			slug: `countries/${$page.params.slug}`,
+			route_id: "/(app)/countries/[slug]"
 		},
 		{
 			name: "About us",
-			slug: `groups/${$page.params.slug}/about-us`,
-			route_id: "/(app)/groups/[slug]/about-us"
+			slug: `countries/${$page.params.slug}/about-us`,
+			route_id: "/(app)/countries/[slug]/about-us"
 		},
 	]
 

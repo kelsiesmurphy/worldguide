@@ -2,32 +2,28 @@ export const load = async ({ parent, params }) => {
 	const { supabase } = await parent();
 
 	let query = supabase
-		.from('groups')
+		.from('countries')
 		.select(
-			`*, group_categories!inner(
-				id, category_slug, group_id
-			), group_members!inner(
-				id, user_id, group_id, users!inner(
-					id, full_name, avatar_url
-				)
+			`*, country_continents!inner(
+				id, continent_slug, country_id
 			)`
 		)
 		.eq('isDraft', false);
 
 	if (params.slug) {
-		query = query.eq('group_categories.category_slug', params.slug);
+		query = query.eq('country_continents.continent_slug', params.slug);
 	}
 
-	const { data: groups } = await query;
+	const { data: countries } = await query;
 
-	const { data: categories } = await supabase
-		.from('categories')
+	const { data: continents } = await supabase
+		.from('continents')
 		.select('*')
 		.order('name', { ascending: true });
 
 	return {
 		slug: params.slug,
-		categories,
-		groups
+		continents,
+		countries
 	};
 };

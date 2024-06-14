@@ -1,7 +1,7 @@
 <script>
 	import { Button } from '../ui/button';
 	import { mode } from 'mode-watcher';
-	import Logomark from '$lib/assets/Logomark.svelte';
+	import Logo from '$lib/assets/Logo.svelte';
 
 	const footerItems = [
 		{
@@ -37,7 +37,7 @@
 
 <footer class="container space-y-6 p-4 pt-24 pb-12">
 	<div class="flex flex-col text-zinc-600 gap-6 items-center">
-		<Button variant="link" href="/"><Logomark /></Button>
+		<Button variant="link" href="/"><Logo /></Button>
 		<ul class="flex justify-center flex-wrap">
 			{#each [...footerItems.values()] as value}
 				<li class={`${$mode === 'dark' && 'text-white'}`}>

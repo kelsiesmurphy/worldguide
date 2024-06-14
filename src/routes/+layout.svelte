@@ -30,6 +30,6 @@
 
 <ModeWatcher />
 <Toaster theme={$mode} />
-<div class="min-h-screen flex flex-col font-inter bg-repeat" style={`background-image: url(/pattern.svg)`}>
+<div class="min-h-screen flex flex-col font-inter bg-repeat" style={`background-image: url(/topography.svg)`}>
 	<slot />
 </div>

@@ -1,10 +1,10 @@
 <script lang="ts">
 	import ModeToggle from './ModeToggle.svelte';
 	import { Button } from '../ui/button';
-	import Logomark from '$lib/assets/Logomark.svelte';
 	import MobileNavigation from './MobileNavigation.svelte';
 	import AvatarDropdown from './AvatarDropdown.svelte';
 	import type { Session, SupabaseClient } from '@supabase/supabase-js';
+	import Logo from '$lib/assets/Logo.svelte';
 
 	export let session: Session | null;
 	export let supabase: SupabaseClient;
@@ -20,7 +20,7 @@
 		Skip Navigation
 	</Button>
 	<div class="flex-1 flex items-center gap-4">
-		<Button variant="link" href="/"><Logomark /></Button>
+		<Button variant="link" href="/"><Logo /></Button>
 		<ul class="hidden sm:flex">
 			{#each [...navigationItems.values()] as value}
 				<li>
