@@ -47,10 +47,8 @@
 		</DropdownMenu.Label>
 		<DropdownMenu.Separator />
 		<DropdownMenu.Group>
-			<DropdownMenu.Item href="/dashboard">My Groups</DropdownMenu.Item>
-			<DropdownMenu.Item href="/dashboard/profile">Profile</DropdownMenu.Item>
+			<DropdownMenu.Item href="/dashboard">Places to visit</DropdownMenu.Item>
 			<DropdownMenu.Item href="/dashboard/settings">Settings</DropdownMenu.Item>
-			<DropdownMenu.Item href="/dashboard/support">Support</DropdownMenu.Item>
 		</DropdownMenu.Group>
 		<DropdownMenu.Separator />
 		<DropdownMenu.Item on:click={handleSignOut} class="cursor-pointer">Sign Out</DropdownMenu.Item>

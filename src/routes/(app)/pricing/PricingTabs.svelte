@@ -43,7 +43,7 @@
 		try {
 			const { sessionId } = await postData({
 				url: '/api/stripe-checkout',
-				data: { price, group_id: "" }
+				data: { price }
 			});
 			const stripe = await getStripe();
 			stripe?.redirectToCheckout({ sessionId });

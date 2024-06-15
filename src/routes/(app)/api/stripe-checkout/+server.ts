@@ -5,8 +5,7 @@ import { getURL } from '$lib/utils/helpers';
 export async function POST({ request, locals: { getSession } }) {
 	if (request.method === 'POST') {
 		// 1. Destructure the price, group_id and quantity from the POST body
-		const { price, group_id, quantity = 1 } = await request.json();
-		const newMetadata = { group_id: group_id || null };
+		const { price, quantity = 1 } = await request.json();
 
 		try {
 			// 2. Get the user session from Supabase auth
@@ -35,9 +34,9 @@ export async function POST({ request, locals: { getSession } }) {
 					mode: 'subscription',
 					allow_promotion_codes: true,
 					subscription_data: {
-						metadata: newMetadata
+						metadata: {}
 					},
-					success_url: `${getURL()}api/stripe-checkout/success/${group_id}`,
+					success_url: `${getURL()}dashboard`,
 					cancel_url: `${getURL()}`
 				});
 			} else if (price.type === 'one_time') {
@@ -56,7 +55,7 @@ export async function POST({ request, locals: { getSession } }) {
 					],
 					mode: 'payment',
 					allow_promotion_codes: true,
-					success_url: `${getURL()}api/stripe-checkout/success/${group_id}`,
+					success_url: `${getURL()}dashboard`,
 					cancel_url: `${getURL()}`
 				});
 			}

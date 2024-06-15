@@ -25,8 +25,17 @@ export const load = async ({ parent }) => {
 		.maybeSingle()
 		.throwOnError();
 
+	const { data: products } = await supabase
+		.from('products')
+		.select('*, prices(*)')
+		.eq('active', true)
+		.eq('prices.active', true)
+		.order('metadata->index')
+		.order('unit_amount', { foreignTable: 'prices' });
+
 	return {
 		subscription,
+		products,
 		userdata,
 		stripeId
 	};

@@ -1,8 +1,5 @@
 <script>
 	import { Separator } from '$lib/components/ui/separator';
-	import Tabs from './Tabs.svelte';
-
-	export let data;
 </script>
 
 <div class="space-y-6">
@@ -13,5 +10,4 @@
 		</p>
 	</div>
 	<Separator />
-	<Tabs {data} />
 </div>
